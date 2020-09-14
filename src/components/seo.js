@@ -82,9 +82,18 @@ function SEO({ description, lang, meta, keywords, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `fr`,
   meta: [],
-  keywords: [],
+  keywords: [
+    "Jérôme Desseaux développeur freelance",
+    "Développeur freelance python",
+    "Développeur freelance node.js",
+    "Développeur fullstack node.js react",
+    "Développeur freelance fullstack python",
+    "Data scientist freelance",
+    "Expert freelance python et node",
+    "Développeur Go et Golang freelance",
+  ],
   description: ``,
 }
 

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     // edit below
     title: `Gatsby Starter Personal Blog`,
-    author: `Gatsby`,
+    author: `Jérôme Desseaux`,
     description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-preact`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
@@ -104,24 +105,30 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     // edit below
+    //     // trackingId: `ADD YOUR TRACKING ID HERE`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Gatsby Starter Blog`,
+    //     short_name: `GatsbyJS`,
+    //     start_url: `/`,
+    //     background_color: `#ffffff`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     // edit below
+    //     icon: `content/assets/gatsby-icon.png`,
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        // edit below
-        // trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        // edit below
-        icon: `content/assets/gatsby-icon.png`,
+        siteUrl: `https://skuld.fr`,
       },
     },
     {

@@ -10,38 +10,40 @@ import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
 
-import { rhythm } from "../utils/typography"
+// import { rhythm } from "../utils/typography"
 
-function Bio() {
+const Bio = props => {
   return (
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author, social } = data.site.siteMetadata
+        const { author } = data.site.siteMetadata
+        const title = props.header ? <h1>{props.header}</h1> : ""
         return (
-          <Container>
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`,
-              }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
-            />
-            <p>
-              Written by <strong>{author}</strong>, a framework built upon the
-              React library.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                Follow me on Twitter
-              </a>
-            </p>
-          </Container>
+          <BioContainer>
+            <BioContent>
+              {title}
+              Quis laborum et labore sunt voluptate nulla excepteur dolore quis
+              nulla voluptate. Ad esse anim laboris eiusmod eiusmod. Consequat
+              id ipsum minim excepteur mollit id duis laboris ullamco sunt
+              excepteur cillum. Consectetur deserunt voluptate nisi qui cillum
+              sunt cupidatat sit consectetur tempor et ex aliqua mollit.
+            </BioContent>
+            <BioImage>
+              <Image
+                fixed={data.avatar.childImageSharp.fixed}
+                alt={author}
+                style={{
+                  borderRadius: `100%`,
+                }}
+                imgStyle={{
+                  borderRadius: `50%`,
+                  border: `2px solid white`,
+                  boxShadow: `0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)`,
+                }}
+              />
+            </BioImage>
+          </BioContainer>
         )
       }}
     />
@@ -50,9 +52,9 @@ function Bio() {
 
 const bioQuery = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/gatsby-icon.png/" }) {
+    avatar: file(absolutePath: { regex: "/Secondary.png/" }) {
       childImageSharp {
-        fixed(width: 50, height: 50) {
+        fixed(width: 200, height: 200) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -60,16 +62,40 @@ const bioQuery = graphql`
     site {
       siteMetadata {
         author
-        social {
-          twitter
-        }
       }
     }
   }
 `
 
-const Container = styled.div`
+const BioContainer = styled.div`
   display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  color: white;
+  margin: 20px 0 30px 0;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`
+
+const BioContent = styled.div`
+  max-width: 60%;
+  min-width: 300px;
+  text-align: justify;
+  @media (max-width: 768px) {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+`
+
+const BioImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 1;
+  flex-grow: 1;
 `
 
 export default Bio

@@ -1,23 +1,31 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
+const typography = new Typography({
+  // baseFontSize: "18px",
+  // baseLineHeight: 1.666,
+  headerFontFamily: ["Hind"],
+
+  bodyFontFamily: ["Lato"],
+  overrideStyles: ({ adjustFontSizeTo }, options, styles) => ({
+    "header a": {
+      fontFamily: "Hind",
     },
-  }
-}
-
-delete Wordpress2016.googleFonts
-
-const typography = new Typography(Wordpress2016)
-
-// Hot reload typography in development.
-if (process.env.NODE_ENV !== `production`) {
-  typography.injectStyles()
-}
+    h1: {
+      fontWeight: 300,
+      textTransform: "uppercase",
+      fontSize: "1.6rem",
+    },
+  }),
+  googleFonts: [
+    {
+      name: "Hind",
+      styles: ["300", "400", "700"],
+    },
+    {
+      name: "Lato",
+      styles: ["300", "400", "700"],
+    },
+  ],
+})
 
 export default typography
-export const rhythm = typography.rhythm
-export const scale = typography.scale
