@@ -5,10 +5,14 @@ import SEO from "../components/seo"
 import Wave from "../components/wave"
 import { Container } from "../components/layout/core"
 import Bio from "../components/bio"
+import ArticleCard from "../components/articleCard"
 
 class IndexPage extends React.Component {
   render() {
+    const { data } = this.props
     const pageTitle = "Développeur ultra performant sur Rouen !! Aimez le!"
+    const posts = data.allMdx.edges
+
     return (
       <Layout>
         <SEO
@@ -30,6 +34,9 @@ class IndexPage extends React.Component {
         <section id="latest__articles" style={{ paddingTop: "25px" }}>
           <Container>
             <h1>Derniers articles</h1>
+            {posts.map(({ node }) => {
+              return <ArticleCard key={node.fields.slug} article={node} />
+            })}
           </Container>
         </section>
       </Layout>
@@ -38,3 +45,32 @@ class IndexPage extends React.Component {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    localSearchBlog {
+      index
+      store
+    }
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 3) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`
