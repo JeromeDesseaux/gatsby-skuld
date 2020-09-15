@@ -42,6 +42,7 @@ const Navbar = () => {
         <LinksContainer>
           <NavbarLink to="/">Accueil</NavbarLink>
           <NavbarLink to="/blog/">Blog</NavbarLink>
+          <NavbarLink to="/a-propos/">A-propos</NavbarLink>
         </LinksContainer>
       </FlexNavbar>
     </Container>

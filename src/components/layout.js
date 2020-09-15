@@ -1,9 +1,10 @@
 import React from "react"
-import { Wrapper, Footer } from "./layout/core"
+import { Wrapper, Footer, FooterContainer } from "./layout/core"
 import Navbar from "./navbar/navbar"
+import colors from "../style/colors"
 
 const headerStyle = {
-  borderTop: "8px solid #234356",
+  borderTop: `8px solid ${colors.darkenPrimary}`,
 }
 
 class Layout extends React.Component {
@@ -15,11 +16,12 @@ class Layout extends React.Component {
         <header style={headerStyle}>
           <Navbar />
         </header>
-        <main>{children}</main>
+        <main style={{ flex: "1 1 auto" }}>{children}</main>
         <Footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <FooterContainer>
+            <div>© {new Date().getFullYear()} Jérôme Desseaux</div>
+            <div>Réseaux</div>
+          </FooterContainer>
         </Footer>
       </Wrapper>
     )

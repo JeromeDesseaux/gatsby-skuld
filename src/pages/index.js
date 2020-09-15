@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Wave from "../components/wave"
-import { Container } from "../components/layout/core"
+import { Container, ArticleContainer } from "../components/layout/core"
 import Bio from "../components/bio"
 import ArticleCard from "../components/articleCard"
 
@@ -14,12 +14,12 @@ class IndexPage extends React.Component {
     const posts = data.allMdx.edges
 
     return (
-      <Layout>
+      <Layout siteMetadata={data.site.siteMetadata}>
         <SEO
           title={pageTitle}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <section id="skuld__agency" style={{ paddingTop: "25px" }}>
+        <section id="skuld__agency">
           <Container>
             <h1>Présentation de Skuld</h1>
           </Container>
@@ -31,12 +31,14 @@ class IndexPage extends React.Component {
             </Container>
           </Wave>
         </section>
-        <section id="latest__articles" style={{ paddingTop: "25px" }}>
+        <section id="latest__articles">
           <Container>
             <h1>Derniers articles</h1>
-            {posts.map(({ node }) => {
-              return <ArticleCard key={node.fields.slug} article={node} />
-            })}
+            <ArticleContainer>
+              {posts.map(({ node }) => {
+                return <ArticleCard key={node.fields.slug} article={node} />
+              })}
+            </ArticleContainer>
           </Container>
         </section>
       </Layout>
@@ -60,14 +62,21 @@ export const pageQuery = graphql`
     allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 3) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 160)
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD/MM/YYYY")
             title
             description
+            image {
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }

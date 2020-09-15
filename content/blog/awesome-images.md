@@ -2,9 +2,10 @@
 path: awesome-images
 date: 2020-06-06T01:22:55.506Z
 title: Awesome Images
-description: Fix for gatsby-plugin-mdx and gatsby-remark-images
+description: De plus en plus, le numérique impacte l'environnement avec une part grandissante chaque année. Comment nous, développeurs, pouvons agir pour la planète sans risquer de devenir des Amish ?
 image: ../assets/great.jpg
 ---
+
 ![Great Gatsby](/../assets/great2.jpg "Great Gatsby")
 
 ## Netlify CMS Media Configuration

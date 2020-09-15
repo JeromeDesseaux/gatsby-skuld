@@ -15,7 +15,7 @@ const WaveContainer = styled.div`
 `
 
 const WaveContent = styled.div`
-  margin-top: 0px;
+  margin-top: -1px;
   display: flex;
   flex: 1;
   background-color: ${colors.primary};

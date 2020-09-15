@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
+import ArticleCard from "../components/articleCard"
 
 // import { rhythm } from "../utils/typography"
 
@@ -50,25 +51,11 @@ const SearchedPosts = ({ results }) =>
       const excerpt = node.excerpt
       const slug = node.slug
 
-      return (
-        <div key={slug}>
-          <h3>
-            <Link style={{ boxShadow: `none` }} to={`/blog${slug}`}>
-              {title}
-            </Link>
-          </h3>
-          <small>{date}</small>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: description || excerpt,
-            }}
-          />
-        </div>
-      )
+      return <ArticleCard key={node.fields.slug} article={node} />
     })
   ) : (
     <p style={{ textAlign: "center" }}>
-      Sorry, couldn't find any posts matching this search.
+      Désolé, impossible de trouver un article en lien avec votre recherche.
     </p>
   )
 
@@ -77,19 +64,20 @@ const AllPosts = ({ posts }) => (
     {posts.map(({ node }) => {
       const title = node.frontmatter.title || node.fields.slug
       return (
-        <div key={node.fields.slug}>
-          <h3>
-            <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
-              {title}
-            </Link>
-          </h3>
-          <small>{node.frontmatter.date}</small>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: node.frontmatter.description || node.excerpt,
-            }}
-          />
-        </div>
+        <ArticleCard key={node.fields.slug} article={node} />
+        // <div key={node.fields.slug}>
+        //   <h3>
+        //     <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
+        //       {title}
+        //     </Link>
+        //   </h3>
+        //   <small>{node.frontmatter.date}</small>
+        //   <p
+        //     dangerouslySetInnerHTML={{
+        //       __html: node.frontmatter.description || node.excerpt,
+        //     }}
+        //   />
+        // </div>
       )
     })}
   </div>
@@ -105,6 +93,8 @@ const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
     JSON.parse(localSearchBlog.store)
   )
 
+  console.log(results)
+
   return (
     <>
       <SearchBar>
@@ -118,7 +108,7 @@ const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
         <input
           id="search"
           type="search"
-          placeholder="Search all posts"
+          placeholder="Rechercher"
           value={query}
           onChange={e => {
             navigate(
