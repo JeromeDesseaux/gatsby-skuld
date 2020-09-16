@@ -60,7 +60,7 @@ const ArticleCard = props => {
     <Card to={`/blog${slug}`}>
       {image ? (
         <CardImage>
-          <Image fluid={image} />
+          <Image fluid={image} alt={abstract} />
         </CardImage>
       ) : (
         ""

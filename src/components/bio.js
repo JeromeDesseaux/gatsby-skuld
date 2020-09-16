@@ -17,7 +17,6 @@ const Bio = props => {
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author } = data.site.siteMetadata
         const title = props.header ? <h1>{props.header}</h1> : ""
         return (
           <BioContainer>
@@ -36,7 +35,7 @@ const Bio = props => {
             <BioImage>
               <Image
                 fixed={data.avatar.childImageSharp.fixed}
-                alt={author}
+                alt="Jérôme Desseaux"
                 style={{
                   borderRadius: `100%`,
                 }}

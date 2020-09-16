@@ -80,7 +80,10 @@ class IndexPage extends React.Component {
               Enfin, depuis le début de mon activité et encore plus aujourd'hui,
               je ne réalise mes prestations qu'en télétravail.
             </p>
-            <StyledImage src={freelancer} />
+            <StyledImage
+              src={freelancer}
+              alt="Jérôme Desseaux développeur freelance spécialisé en Python et Node.js. Développement backend et data. Création d'algorithmes d'intelligence artificielle"
+            />
             <StackContainer>
               <StackDiv>
                 {" "}
