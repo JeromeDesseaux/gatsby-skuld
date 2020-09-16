@@ -1,6 +1,7 @@
 import React from "react"
 import { Wrapper, Footer, FooterContainer } from "./layout/core"
 import Navbar from "./navbar/navbar"
+import SocialLink from "./socialLink"
 import colors from "../style/colors"
 
 const headerStyle = {
@@ -20,7 +21,20 @@ class Layout extends React.Component {
         <Footer>
           <FooterContainer>
             <div>© 2018 - {new Date().getFullYear()} Jérôme Desseaux</div>
-            <div>Réseaux</div>
+            <div>
+              <SocialLink
+                to="https://twitter.com/jerome_desseaux"
+                icon="devicon-twitter-plain"
+              />
+              <SocialLink
+                to="https://www.linkedin.com/in/jeromedesseaux/"
+                icon="devicon-linkedin-plain"
+              />
+              <SocialLink
+                to="https://github.com/JeromeDesseaux"
+                icon="devicon-github-plain"
+              />
+            </div>
             <div>
               Portez-vous bien{" "}
               <span role="img" aria-label="heart icon">

@@ -57,15 +57,24 @@ const StackDiv = styled.div`
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props
-    const pageTitle = "Consultant backend freelance (Python, Node.js & Go)"
+    const pageTitle = "Consultant Python backend et data freelance"
     const posts = data.allMdx.edges
-    console.log(data)
 
     return (
       <Layout siteMetadata={data.site.siteMetadata}>
         <SEO
           title={pageTitle}
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          keywords={[
+            `Python`,
+            `Node.js`,
+            `Freelance`,
+            `Développeur`,
+            `Expertise`,
+            `Jérôme Desseaux`,
+            `Intelligence Artificielle`,
+            `Data`,
+            `Traitement de données`,
+          ]}
         />
         <section id="skuld__agency">
           <Container>
@@ -89,6 +98,7 @@ class IndexPage extends React.Component {
                 {" "}
                 <i class="devicon-python-plain colored"></i>
                 <i class="devicon-nodejs-plain colored"></i>
+                {/* <i class="devicon-php-plain colored"></i> */}
                 <i class="devicon-go-line colored"></i>
                 <i class="devicon-html5-plain colored"></i>
                 <i class="devicon-css3-plain colored"></i>
