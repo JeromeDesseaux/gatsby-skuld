@@ -17,8 +17,8 @@ const StyledLink = styled(Link)`
   justify-content: center;
   align-items: center;
   &:hover {
-    color: ${colors.secondary};
-    border-bottom: 1px solid ${colors.secondary};
+    color: ${colors.darkenSecondary};
+    border-bottom: 1px solid ${colors.darkenSecondary};
   }
 `
 
