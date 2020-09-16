@@ -19,8 +19,14 @@ class Layout extends React.Component {
         <main style={{ flex: "1 1 auto" }}>{children}</main>
         <Footer>
           <FooterContainer>
-            <div>© {new Date().getFullYear()} Jérôme Desseaux</div>
+            <div>© 2018 - {new Date().getFullYear()} Jérôme Desseaux</div>
             <div>Réseaux</div>
+            <div>
+              Portez-vous bien{" "}
+              <span role="img" aria-label="heart icon">
+                ♥️
+              </span>
+            </div>
           </FooterContainer>
         </Footer>
       </Wrapper>

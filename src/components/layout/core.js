@@ -38,6 +38,7 @@ const Container = styled.div`
   padding-top: 25px;
   width: 60%;
   margin: auto;
+  text-align: justify;
   @media (max-width: ${responsive.minScreenResponsiveSize}px) {
     width: 100%;
     padding: 15px;

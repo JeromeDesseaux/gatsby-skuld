@@ -6,12 +6,60 @@ import Wave from "../components/wave"
 import { Container, ArticleContainer } from "../components/layout/core"
 import Bio from "../components/bio"
 import ArticleCard from "../components/articleCard"
+import styled from "styled-components"
+import freelancer from "../../content/assets/web.svg"
+import responsive from "../style/responsive"
+
+const textStyling = {
+  textAlign: "justify",
+}
+
+const StyledImage = styled.img`
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  @media (max-width: ${responsive.minScreenResponsiveSize}px) {
+    width: 80%;
+  }
+`
+
+const StackContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`
+
+const StackDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  & i {
+    padding: 10px;
+    font-size: 50px;
+    transition: all 0.3s ease 0s;
+    // &:hover {
+    //   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22);
+    //   border-radius: 7px;
+    // }
+  }
+  @media (max-width: ${responsive.minScreenResponsiveSize}px) {
+    width: 80%;
+  }
+`
 
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props
-    const pageTitle = "Développeur ultra performant sur Rouen !! Aimez le!"
+    const pageTitle = "Consultant backend freelance (Python, Node.js & Go)"
     const posts = data.allMdx.edges
+    console.log(data)
 
     return (
       <Layout siteMetadata={data.site.siteMetadata}>
@@ -21,13 +69,42 @@ class IndexPage extends React.Component {
         />
         <section id="skuld__agency">
           <Container>
-            <h1>Présentation de Skuld</h1>
+            <h1>Architecture et développement logiciel</h1>
+            <p style={textStyling}>
+              Depuis 2013, j'accompagne les porteurs de projet sur leurs
+              ambitions numériques. Architecte logiciel pluridisciplinaire,
+              j'apporte ma vision transverse sur des thématiques aussi variées
+              que complémentaires allant du développement web à la science des
+              données et à l'intelligence artificielle. Mes disponibilités sont
+              accessibles sur mon profil LinkedIn et régulièrement mises à jour.
+              Enfin, depuis le début de mon activité et encore plus aujourd'hui,
+              je ne réalise mes prestations qu'en télétravail.
+            </p>
+            <StyledImage src={freelancer} />
+            <StackContainer>
+              <StackDiv>
+                {" "}
+                <i class="devicon-python-plain colored"></i>
+                <i class="devicon-nodejs-plain colored"></i>
+                <i class="devicon-go-line colored"></i>
+                <i class="devicon-html5-plain colored"></i>
+                <i class="devicon-css3-plain colored"></i>
+                <i class="devicon-vuejs-plain colored"></i>
+                <i class="devicon-react-original colored"></i>
+                <i class="devicon-mongodb-plain colored"></i>
+                <i class="devicon-postgresql-plain colored"></i>
+                <i class="devicon-linux-plain colored"></i>
+                <i class="devicon-docker-plain colored"></i>
+                <i class="devicon-git-plain-wordmark colored"></i>
+              </StackDiv>
+            </StackContainer>
           </Container>
         </section>
         <section id="who__am__i">
           <Wave>
             <Container>
-              <Bio header="Qui suis-je ?" />
+              {/* <p>Bonjour, je suis</p> */}
+              <Bio header="Jérôme Desseaux" />
             </Container>
           </Wave>
         </section>

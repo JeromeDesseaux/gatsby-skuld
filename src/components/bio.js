@@ -23,11 +23,15 @@ const Bio = props => {
           <BioContainer>
             <BioContent>
               {title}
-              Quis laborum et labore sunt voluptate nulla excepteur dolore quis
-              nulla voluptate. Ad esse anim laboris eiusmod eiusmod. Consequat
-              id ipsum minim excepteur mollit id duis laboris ullamco sunt
-              excepteur cillum. Consectetur deserunt voluptate nisi qui cillum
-              sunt cupidatat sit consectetur tempor et ex aliqua mollit.
+              Normand et fier de l'être, je suis aussi Ingénieur en Architecture
+              des Systèmes d'Information. J'accompagne diverses entreprises,
+              grandes comme petites, sur des thématiques allant du traitement de
+              données au développement web. Depuis 2018, je continue de mettre
+              ces compétences pluridisciplinaires à la disposition de tous en
+              tant que freelance. Je suis également sensible aux enjeux
+              écologiques de notre siècle et oeuvre au quotidien pour réduire
+              mon impact énergétique, aussi bien dans mes développements que
+              dans ma vie privée.
             </BioContent>
             <BioImage>
               <Image
@@ -82,6 +86,9 @@ const BioContainer = styled.div`
 
 const BioContent = styled.div`
   max-width: 60%;
+  line-height: 1.6rem;
+  font-size: 17px;
+  text-align: justify;
   min-width: 300px;
   text-align: justify;
   @media (max-width: 768px) {

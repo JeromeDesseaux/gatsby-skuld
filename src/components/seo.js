@@ -77,7 +77,12 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
-    />
+    >
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
+      ></link>
+    </Helmet>
   )
 }
 
