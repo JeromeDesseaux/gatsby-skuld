@@ -23,7 +23,7 @@ const StyledLink = styled(Link)`
 `
 
 const activeStyle = {
-  color: `${colors.secondary}`,
+  color: `${colors.darkenSecondary}`,
 }
 
 const NavbarLink = props => {
