@@ -40,6 +40,11 @@ const CardContent = styled.div`
   text-align: justify;
   //   align-items: center;
   height: 100%;
+  & h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
 `
 
 const ArticleCard = props => {
@@ -61,7 +66,7 @@ const ArticleCard = props => {
         ""
       )}
       <CardContent>
-        <h3>{title}</h3>
+        <h2>{title}</h2>
         <p>{abstract}</p>
         <small>Publié le {date}</small>
       </CardContent>
