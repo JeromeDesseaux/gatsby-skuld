@@ -78,7 +78,7 @@ class IndexPage extends React.Component {
         />
         <section id="skuld__agency">
           <Container>
-            <h1>Architecture et développement logiciel</h1>
+            <h1>Architecture et développement web</h1>
             <p style={textStyling}>
               Depuis 2013, j'accompagne les porteurs de projet sur leurs
               ambitions numériques. Architecte logiciel pluridisciplinaire,
