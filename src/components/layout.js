@@ -25,14 +25,15 @@ class Layout extends React.Component {
               <SocialLink
                 to="https://twitter.com/jerome_desseaux"
                 icon="devicon-twitter-plain"
+                label="Lien vers mon profil Twitter"
               />
               <SocialLink
                 to="https://www.linkedin.com/in/jeromedesseaux/"
-                icon="devicon-linkedin-plain"
+                icon="Lien vers mon profil LinkedIn"
               />
               <SocialLink
                 to="https://github.com/JeromeDesseaux"
-                icon="devicon-github-plain"
+                icon="Lien vers mon profil GitHub"
               />
             </div>
             <div>

@@ -16,9 +16,9 @@ const StyledLink = styled.a`
 `
 
 const SocialLink = props => {
-  const { to, icon } = props
+  const { to, icon, label } = props
   return (
-    <StyledLink href={to} target="_blank" rel="noreferrer">
+    <StyledLink href={to} target="_blank" rel="noreferrer" aria-label={label}>
       <i class={icon}></i>
     </StyledLink>
   )
