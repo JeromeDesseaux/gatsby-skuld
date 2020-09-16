@@ -29,11 +29,13 @@ class Layout extends React.Component {
               />
               <SocialLink
                 to="https://www.linkedin.com/in/jeromedesseaux/"
-                icon="Lien vers mon profil LinkedIn"
+                icon="devicon-linkedin-plain"
+                label="Lien vers mon profil LinkedIn"
               />
               <SocialLink
                 to="https://github.com/JeromeDesseaux"
-                icon="Lien vers mon profil GitHub"
+                icon="devicon-github-plain"
+                label="Lien vers mon profil GitHub"
               />
             </div>
             <div>
