@@ -3,8 +3,8 @@ module.exports = {
     // edit below
     title: `Skuld`,
     author: `Jérôme Desseaux`,
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `Architecte et développeur web freelance spécialisé en technologies backend et data (Python, Node.js et Go) avec un soupçon de front quand il faut.`,
+    siteUrl: `https://skuld.fr`,
     social: {
       twitter: `gatsbyjs`,
     },
@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-plugin-preact`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: "gatsby-plugin-local-search",
       options: {
