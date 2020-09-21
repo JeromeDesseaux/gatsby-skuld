@@ -80,14 +80,14 @@ class IndexPage extends React.Component {
           <Container>
             <h1>Architecture et développement web</h1>
             <p style={textStyling}>
-              Depuis 2013, j'accompagne les porteurs de projet sur leurs
+              Depuis 2013, j'accompagne les porteurs de projet dans leurs
               ambitions numériques. Architecte logiciel pluridisciplinaire,
               j'apporte ma vision transverse sur des thématiques aussi variées
               que complémentaires allant du développement web à la science des
               données et à l'intelligence artificielle. Mes disponibilités sont
               accessibles sur mon profil LinkedIn et régulièrement mises à jour.
-              Enfin, depuis le début de mon activité et encore plus aujourd'hui,
-              je ne réalise mes prestations qu'en télétravail.
+              Enfin, depuis le début de mon activité et encore davantage
+              aujourd'hui, je ne réalise mes prestations qu'en télétravail.
             </p>
             <StyledImage
               src={freelancer}

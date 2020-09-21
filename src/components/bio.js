@@ -22,15 +22,17 @@ const Bio = props => {
           <BioContainer>
             <BioContent>
               {title}
-              Normand et fier de l'être, je suis aussi Ingénieur en Architecture
-              des Systèmes d'Information. J'accompagne diverses entreprises,
-              grandes comme petites, sur des thématiques allant du traitement de
-              données au développement web. Depuis 2018, je continue de mettre
-              ces compétences pluridisciplinaires à la disposition de tous en
-              tant que freelance. Je suis également sensible aux enjeux
-              écologiques de notre siècle et oeuvre au quotidien pour réduire
-              mon impact énergétique, aussi bien dans mes développements que
-              dans ma vie privée.
+              Ingénieur en Architecture des Systèmes d'Information, j'accompagne
+              diverses entreprises, grandes comme petites, sur des thématiques
+              allant du traitement de données au développement web. Depuis 2018,
+              je continue de mettre ces compétences pluridisciplinaires à la
+              disposition de tous en tant que freelance. Je suis aussi également
+              sensible aux enjeux écologiques de notre siècle et oeuvre au
+              quotidien pour réduire mon impact énergétique, aussi bien dans mes
+              développements que dans ma vie privée. Habitant en Normandie, j'ai
+              depuis toujours réalisé mes projets à distance. Je suis donc
+              habitué à ce mode de travail, ses outils, ses avantages et tout
+              comme ses contraintes.
             </BioContent>
             <BioImage>
               <Image
