@@ -36,9 +36,9 @@ const CardContent = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: space-between;
   text-align: justify;
-  //   align-items: center;
+  align-items: start;
   height: 100%;
   & h2 {
     font-weight: 300;
@@ -46,6 +46,14 @@ const CardContent = styled.div`
     font-size: 20px;
   }
 `
+
+const CardFooter = styled.small`
+  margin-top: auto;
+`
+
+const truncate = (text, length) => {
+  return text.length > length ? text.substring(0, length - 3) + "..." : text
+}
 
 const ArticleCard = props => {
   const { article } = props
@@ -67,8 +75,8 @@ const ArticleCard = props => {
       )}
       <CardContent>
         <h2>{title}</h2>
-        <p>{abstract}</p>
-        <small>Publié le {date}</small>
+        <p>{truncate(abstract, 200)}</p>
+        <CardFooter>Publié le {date}</CardFooter>
       </CardContent>
     </Card>
   )

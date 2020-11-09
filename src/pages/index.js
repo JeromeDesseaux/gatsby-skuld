@@ -57,7 +57,7 @@ const StackDiv = styled.div`
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props
-    const pageTitle = "Consultant Python backend et data freelance"
+    const pageTitle = "Architecte de solutions numériques indépendant"
     const posts = data.allMdx.edges
 
     return (
@@ -67,6 +67,7 @@ class IndexPage extends React.Component {
           keywords={[
             `Python`,
             `Node.js`,
+            `API`,
             `Freelance`,
             `Développeur`,
             `Expertise`,
