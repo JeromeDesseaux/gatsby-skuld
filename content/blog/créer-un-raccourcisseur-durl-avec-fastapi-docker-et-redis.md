@@ -112,7 +112,7 @@ Une pause s'impose ! `shorten_url` récupère un Item (et map la requête automa
 
 On peut maintenant nettoyer notre fichier `main.py` : 
 
-````python
+```python
 from fastapi import FastAPI
 from routers.shortener import router as shortener_router
 
