@@ -11,7 +11,9 @@ Connaissez-vous FastAPI ? Si la réponse à cette question est "non", alors je v
 L'intégralité du projet est accessible sur un de mes dépôts GitHub : <https://github.com/JeromeDesseaux/url_shortener>
 
 # Environnement virtuel
+
 Pour gérer les environnements, j'utilise personnellement pipenv (`pip install pipenv`) qui permet de créer simplement des environnements virtuels pour mes projets. Après avoir créé un nouveau dossier, placez-vous dans celui-ci et appelez pipenv : 
+
 ```bash
 mkdir url_shortener
 pipenv install fastapi pytest redis uvicorn
@@ -36,7 +38,6 @@ app = FastAPI()
 def root():
     """ URL racine sans autre utilité que de dire un petit coucou aux utilisateurs """
     return {"message": "Welcome to our URL shortener app"}
-
 ```
 
 A ce stade, si vous lancez votre serveur `uvicorn main:app --reload` et accédez à la page <http://localhost:8000> vous devriez tomber sur le json : `{"message": "Welcome to our URL shortener app"}`
@@ -48,6 +49,7 @@ Cool! Tout fonctionne. Maintenant, créons la logique de notre raccourcisseur d'
 Si tu es un bon développeur, tu sais qu'on ne code JAMAIS tout son code dans le même fichier. Ca parait bête, mais tout le monde n'est pas au courant ... alors histoire de bien faire les choses, on commence par créer un module qui contiendra notre code. Appelons-le `routers`. Dans ce dossier, on créé un fichier python qui contient notre code `shortener.py`. 
 
 Ce que nous voulons, c'est envoyer une URL à notre service, qu'il la stocke en mémoire et nous fournisse une URL plus courte en échange. Lorsqu'on lui renvoie cette URL courte, il nous redirige vers le site en question. Nous avons donc besoin de deux services : 
+
 1. Création et stockage des URLs longues
 2. Redirection grâce aux URLs courtes
 
@@ -59,7 +61,8 @@ from pydantic import BaseModel
 
 class Item(BaseModel):
     """ Définition de la classe de représentation des URL complètes et raccourcies """
-    url: str # stocke l'url longue
+    url: str
+ # stocke l'url longue
     custom_target: str = None # stocke l'url raccourcie
 ```
 
@@ -121,7 +124,7 @@ app = FastAPI()
 
 # Ajout des routes du raccourcisseur d'URL
 app.include_router(shortener_router)
-``` 
+```
 
 Exécutons notre projet et testons le ! 
 
@@ -130,7 +133,7 @@ Exécutons notre projet et testons le !
 Rendez-vous sur <http://localhost:8000/docs> et testez directement l'API depuis une interface web Swagger. Sinon, on peut exécuter les commandes via CURL : 
 
 ```bash
-curl -X POST "http://localhost:3000/shortify" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"url\":\"https://google.fr\"}"
+curl -X POST "http://localhost:8000/shortify" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"url\":\"https://google.fr\"}"
 
 # réponse : 
 #{
@@ -143,9 +146,8 @@ Cette commande doit vous retourner un json contenant la version raccourcie de l'
 
 <http://localhost:8000/{URL_COURTE}> en replaçant {URL_COURTE} par la valeur de la variable. Dans mon cas : <http://localhost:8000/a62470>. Si vous êtes redirigé vers google : félicitations, vous venez de coder votre premier raccourcisseur d'URL ! 
 
-# Suite ? 
+# Suite ?
 
 Dans un prochain article, nous parlerons de comment déployer ce projet avec Docker et d'automatiser le processus de création d'image. Nous verrons également comment tester votre projet de façon automatique et d'éviter ainsi les problèmes de régression. 
 
-Stay tuned! 
-
+Stay tuned!
